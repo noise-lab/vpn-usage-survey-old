@@ -18,7 +18,7 @@
 %%%  Custom variables to be set appropriately.
 %%%
 \newcommand{\AUTHORS}{Authors}
-\newcommand{\TITLE}{Title}
+\newcommand{\TITLE}{VPNs}
 \newcommand{\KEYWORDS}{Keywords}
 \newcommand{\CONFERENCE}{Conference}
 \newcommand{\PAGENUMBERS}{yes} % "yes" or "no"
