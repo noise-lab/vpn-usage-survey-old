@@ -1,4 +1,4 @@
-TARGET=main
+TARGET=paper
 all: pdf
 
 pdf:
