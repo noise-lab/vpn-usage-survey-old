@@ -46,7 +46,22 @@ However, only 1 participant believes VPNs guarantee anonymity (8.3\%), and only 
  
 \subsection{Experiment Design}
 \subsubsection{VPN Audit Extension}
-Tool design goes here
+\begin{figure}[t]
+    \includegraphics[width=0.85\linewidth]{sections/figures/vpn-audit.png}
+    \caption{A screenshot of our Chrome extension for showing the browsing history sent to trackers outside of Hotspot Shield.}
+    \label{fig:vpn-audit}
+\end{figure}
+
+We became interested in studying how university students think about privacy with respect to VPNs  when we learned that Hotspot Shield--a free VPN provider--sends data to select trackers through its Chrome extension~\cite{windscribe-hotspot-shield}.
+According to the PAC file the extension, if an object on a webpage that points to the domains "analytics.google.com" (owned by Google), "pixel.quantserve.com" (owned by Quantcast), or "shelljacket.us", then any connections to these domains are created outside of the VPN.
+\AH{Should we show the code for the PAC file here as a figure?}
+This means Google and Quantcast can see which websites users of Hotspot Shield are visiting, even while the users are behind the VPN.
+
+After we learned of this practice, we decided to develop our Chrome extension to show the practice and design an experiment to see how university students would react.
+Figure~\ref{fig:vpn-audit} shows a screenshot of our extension.
+The extension works by examining webpages in real time that users visit while using Hotspot Shield and looking for the Google Analytics, Quantserve, and Shelljacket trackers.
+It then counts the number of unique webpage that these trackers were present on.
+When a user clicks on the name of a tracker, they see a list of each unique webpage under the "Browsing history sent to tracker" heading.
 
 \subsubsection{Interview Questions}
 Interview questions go here
