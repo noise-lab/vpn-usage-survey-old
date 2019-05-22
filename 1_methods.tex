@@ -62,7 +62,16 @@ for example \textit{Guidelines when choosing VPN} and \textit{Possible improvmen
 
 We used Qualtrics and R as software for the survey data analysis. We first analyzed the
 response data using tools built-in with Qualtrics. We limited our analysis to
-the 350 valid and complete responses. First, we performed descriptive analysis on all the survey questions. Next, we searched for statistically
+the 350 valid and complete responses. First, we performed descriptive analysis on all the survey questions. All survey questions were required for respondents, but individual questions
+were shown to respondents only when applicable. As such, questions that have
+fewer than 350 data points contain responses from every applicable respondent;
+a lack of response does not indicate a respondent's choice to abstain. In
+presenting our results, we discuss percentages in terms of the number of
+people who were shown the question. However, the figures presented in this
+section will display percentages in terms of the total number of respondents
+(350), and include "N/A" values for those who were not shown the question.
+
+Next, we searched for statistically
 significant correlations by finding pairwise correlations for each variable.
 The raw response data was unsound for this purpose as it contained 605
 variables, including separate variables for each checkbox in
@@ -89,7 +98,11 @@ exhaustive, there are doubtless many unobserved variables that could
 significantly affect the accuracy of any detailed analyses. Given the nature
 of this study, we decided that the goal of this part of our analysis would be
 to quantify the degrees to which our observed variables were correlated using
-R and p values.
+R and p values. Because our analysis involved the presence of both unobserved variables and
+the unpredictability of human behavior, we expected our correlation analysis
+to produce low R values. We will only be including correlations that are
+notable and statistically significant (p < .05). Unless otherwise noted, R
+values range from .1 to .3.
 
 \subsection{Participants} In total, we conducted 32 interviews with 20
 international students and 12 domestic students. Figure one shows demographic data of our intreviewees, who were mostly 18-24 years old, undergraduate students (81\%).
@@ -148,9 +161,6 @@ wished to enter our compensation drawing to submit an email. This could
 introduce error in the respondents' levels of honesty. Future researchers
 could build on our results using alternative methods.
 
-Finally, we limited our survey pool to Princeton students due to ease of
-access, and used our respondents as a representative sample for college
-students in the US. However, this introduces sample bias as Princeton students
-could display specific traits. Future researchers could replicate our study
+Finally, our survey pool was limited to one institution's students and may not be representative of all college students in the US. Future researchers could replicate our study
 with a more general college student population, or with other populations of
 interest.
