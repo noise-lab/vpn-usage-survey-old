@@ -1,25 +1,18 @@
 % remember to put in tool design
 % interview Q's etc - mirror sections from study part 1
-In order to better understand how students think about privacy when choosing between VPN providers, we designed a small-scale lab experiment. \AH{I don't think "experiment" is the right word, but I'm using it for now.}
-The results of the interviews and the survey described in sections~\ref{} suggest that privacy is not of significant concern to students when choosing a VPN provider to use.
-Nonetheless, we were interested in seeing if students would value privacy more if they were given more information about the privacy practices of VPN providers.
+To better understand how students think about privacy when choosing between VPN providers, we designed a small-scale lab study. 
+The results of the interviews and the survey described in sections~\ref{} suggested that privacy was not of significant concern to students when choosing a VPN provider to use.
+Nonetheless, we wanted to assess if students would value their privacy more if they were given more information about the privacy practices of VPN providers.
 
 \subsection{Recruitment} 
 We once again recruited participants through listservs maintained by our institution's survey center.
-We filtered for students who had used a VPN before and were currently undergraduate or graduate students at our institution.
+We filtered for students who had used a VPN before, who had not participated in the interview or survey studies, and were currently undergraduate or graduate students at our institution. 
 All interviews were audio-taped, and participants were compensated with a \$20 Amazon gift card.
 
-In total, 64 people responded to our recruitment e-mails.
-Of these respondents, 5 had participated in either the survey or the interview portion of our study, so they were not eligible to participate in our experiment.
-One of the respondents was also not a student, so they were not eligible to participate in our experiment.
+In total, 64 people responded to our recruitment e-mails but some were ineligible as they had completed the interview or survey or were not students. We were able to conduct our experiment with 14 of the 65 eligible participants. However, we had to discard two interviews owing to  audio related issues and since one of the participants had actually participated in the survey. This left us with valid data from 12 participants.
 
-We were able to conduct our experiment with 14 of the 65 eligible participants. 
-Unfortunately, one of the experiments was conducted in a noisy setting, which may have influenced the participant's responses.
-We also later discovered that one of the participants we conducted the experiment with had also participated in the survey portion of our study.
-This left us with valid data from 12 participants to analyze.
-
-\subsection{Pre-experiment Survey} 
-Before participating in the experiment, respondents were asked to fill out a consent form and a short survey where we collected demographic information.
+\subsection{Pre-study Survey} 
+Before participating in the study, respondents were asked to fill out a consent form and a short survey where we collected demographic information.
 In the survey, participants confirmed that they have used a VPN before, and they listed the VPNs they have used in the past.
 Participants also gave consent to audio recording for the experiment.
 
@@ -44,7 +37,7 @@ Furthermore, 8 of the participants believed their VPN provider collects data abo
 Interestingly, 7 of the participants believe VPNs guarantee access to the Internet (58.3\%), 6 of the participants believe VPNs mask their IP address (50\%), and 4 participants believe VPNs guarantee safety from tracking (33.3\%).
 However, only 1 participant believes VPNs guarantee anonymity (8.3\%), and only 1 participant believes VPNs guarantee "privacy" (8.3\%).
  
-\subsection{Experiment Design}
+\subsection{Laboratory Study Design}
 \subsubsection{VPN Audit Extension}
 \begin{figure}[t]
     \includegraphics[width=0.85\linewidth]{sections/figures/vpn-audit.png}
@@ -52,29 +45,24 @@ However, only 1 participant believes VPNs guarantee anonymity (8.3\%), and only 
     \label{fig:vpn-audit}
 \end{figure}
 
-We became interested in studying how university students think about privacy with respect to VPNs  when we learned that Hotspot Shield--a free VPN provider--sends data to select trackers through its Chrome extension~\cite{windscribe-hotspot-shield}.
-According to the PAC file the extension, if an object on a webpage that points to the domains "analytics.google.com" (owned by Google), "pixel.quantserve.com" (owned by Quantcast), or "shelljacket.us", then any connections to these domains are created outside of the VPN.
-\AH{Should we show the code for the PAC file here as a figure?}
-This means Google and Quantcast can see which websites users of Hotspot Shield are visiting, even while the users are behind the VPN.
+Hotspot Shield--a free VPN provider--sends data to select trackers through its Chrome extension~\cite{windscribe-hotspot-shield}. \mc{isn't it also the most popular vpn, add ref to indicate as much} According to the PAC \mc{describe what this is for} file in the extension, if an object on a webpage that points to the domains "analytics.google.com" (owned by Google), "pixel.quantserve.com" (owned by Quantcast), or "shelljacket.us", then any connections to these domains are created outside of the VPN.
+\AH{Should we show the code for the PAC file here as a figure?} \mc{yes, show and highlight the relevant piece with an annotation or caption}
+This means Google and Quantcast can see which websites users of Hotspot Shield are visiting, even while the users are using the VPN. \mc{say why this is a data leakage per se}
 
-After we learned of this practice, we decided to develop our Chrome extension to show the practice and design an experiment to see how university students would react.
+We developed VPNAudit as a Chrome extension to show users the privacy leaks in HotSpotShied and design a laboratory study to see how university students would react.
 Figure~\ref{fig:vpn-audit} shows a screenshot of our extension.
 The extension works by examining webpages in real time that users visit while using Hotspot Shield and looking for the Google Analytics, Quantserve, and Shelljacket trackers.
 It then counts the number of unique webpage that these trackers were present on.
-When a user clicks on the name of a tracker, they see a list of each unique webpage under the "Browsing history sent to tracker" heading.
+When a user clicks on the name of a tracker, they see a list of each unique webpage under the "Browsing history sent to tracker" heading. \mc{need to explain why this is important}
 
 \subsubsection{Interview Questions}
-Interview questions go here
+Interview questions go here \mc{add in the tasks they were asked to complete and the protocol you followed during the interviews including showing them screenshots (did you do that?) etc}
 
 \subsection{Analysis}
-We first transcribed the recordings from each experiment and developed codings to apply to the transcripts.
-Our codings were based on general trends we discovered from reading the transcriptions.
-These trends relate to how about how participants choose VPN providers and how participants think about privacy with respect to VPNs.
-In total, we created 13 parent codes and 68 child codes.
-
-Once we finished coding the interviews, we reviewed text from the transcripts that corresponded to the most common codings.
-We then selected quotes from the text that we believe were most illuminating for the most common codings.
-We note that these quotes do not necessarily summarize the views of each participant.
+We first transcribed the recordings from each session and developed a code book to apply to the transcripts.
+Our code book was based on general trends we discovered from an initial reading of the transcriptions.
+The codes created related to choosing VPN providers, perceptions of privacy with respect to VPNs, and reactions to VPNAudit.
+In total, we created 13 parent codes and 68 child codes. \mc{add example codes} The research team then discussed the coded transcripts and the final themes emerging from the lab sessions are discussed here.
 
 \subsection{Limitations}
 There are several limitations of our participant demographics that must be considered.
