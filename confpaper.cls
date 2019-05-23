@@ -18,7 +18,7 @@
 %%%  Custom variables to be set appropriately.
 %%%
 \newcommand{\AUTHORS}{Authors}
-\newcommand{\TITLE}{Title}
+\newcommand{\TITLE}{Not For Privacy: Understanding College Students' Use of\\ Virtual Private Networks}
 \newcommand{\KEYWORDS}{Keywords}
 \newcommand{\CONFERENCE}{Conference}
 \newcommand{\PAGENUMBERS}{yes} % "yes" or "no"

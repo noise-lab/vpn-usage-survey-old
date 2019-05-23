@@ -5,47 +5,9 @@ The results of the interviews and the survey described in sections~\ref{} sugges
 Nonetheless, we wanted to assess if students would value their privacy more if they were given more information about the privacy practices of VPN providers.
 \AH{Should I add a short blurb about what kind of experiment we designed?}
 
-\subsection{Recruitment} 
-We once again recruited participants through listservs maintained by our institution's survey center.
-We filtered for students who had used a VPN before, who had not participated in the interview or survey studies, and were currently undergraduate or graduate students at our institution. 
-All interviews were audio-taped, and participants were compensated with a \$20 Amazon gift card.
+\subsection{VPN Audit Extension}\AH{Should we add a blurb about the overall design of the study?}
 
-In total, 64 people responded to our recruitment e-mails but some were ineligible as they had completed the interview or survey or were not students.
-We were able to conduct our experiment with 14 of the 65 eligible participants.
-However, we had to discard two interviews owing to audio related issues and since one of the participants had actually participated in the survey.
-This left us with valid data from 12 participants.
 
-\subsection{Pre-study Survey} 
-Before participating in the study, respondents were asked to fill out a consent form and a short survey where we collected demographic information.
-In the survey, participants confirmed that they have used a VPN before, and they listed the VPNs they have used in the past.
-Participants also gave consent to audio recording for the experiment.
-
-We also asked the participants several multiple choice questions to elicit their views on privacy with respect to VPNs.
-For example, we asked participants who they think has access to their data while using a VPN.
-We also asked participants what kinds of data they think are being shared.
-These questions gave us a broad understanding of the views participants had about VPNs before participating in the experiment.
-
-\subsection{Participants} 
-\mc{can we summarize some of this in a table?}
-According to the results of our pre-study survey, 9 of our 12 participants were between the ages of 18 and 24 (75\%) and 3 participants were between the ages of 25 and 34 (25\%).
-Of these participants, 7 were females (58.3\%), and 5 were males (41.7\%).
-Furthermore, 7 of the participants were from the United States (58.3\%), and 5 participants were of other nationalities (41.7\%). 
-Lastly, 4 of the participants were computer science students (33.3\%), 3 of the participants were political science students (25\%), and 5 of the participants were studying other majors (41.7\%).
-
-With respect to VPN usage, 8 participants indicated that they have used institutional VPNs (66.7\%), and 3 participants indicated that they have used VPNs that their employers offered (25\%).
-Furthermore, 6 participants indicated that they have used a paid, commercial VPN (41.7\%), and 5 participants indicated that they have used a free, commercial VPN (50\%).
-Interestingly, 1 participant indicated that they have used a VPN that they set up themselves (8.3\%).
-
-Lastly, with respect to privacy, 10 participants indicated that they have not looked through a VPN provider's privacy policy (83.3\%), with only 2 participants indicating otherwise (16.7\%).
-Every participant believed their VPN provider has access to their location (100\%).
-Furthermore, 8 of the participants believed their VPN provider collects data about which websites they visit (66.7\%).
-Interestingly, 7 of the participants believe VPNs guarantee access to the Internet (58.3\%), 6 of the participants believe VPNs mask their IP address (50\%), and 4 participants believe VPNs guarantee safety from tracking (33.3\%).
-However, only 1 participant believes VPNs guarantee anonymity (8.3\%), and only 1 participant believes VPNs guarantee "privacy" (8.3\%).
- 
-\subsection{Laboratory Study Design}
-\AH{Should we add a blurb about the overall design of the study?}
-
-\subsubsection{VPN Audit Extension}
 \begin{figure}[t]
     \includegraphics[width=0.85\linewidth]{sections/figures/vpn-audit.png}
     \caption{A screenshot of our Chrome extension for showing the browsing history sent to trackers outside of Hotspot Shield.}
@@ -62,11 +24,22 @@ The extension works by examining webpages in real time that users visit while us
 It then counts the number of unique webpage that these trackers were present on.
 When a user clicks on the name of a tracker, they see a list of each unique webpage under the "Browsing history sent to tracker" heading. \mc{need to explain why this is important}
 
-\subsubsection{Interview Questions}
+
+\subsection{Study Protocol} 
+Before participating in the study, respondents were asked to fill out a consent form and a short survey where we collected demographic information.
+In the survey, participants confirmed that they have used a VPN before, and they listed the VPNs they have used in the past.
+Participants also gave consent to audio recording for the experiment.
+
+We also asked the participants several multiple choice questions to elicit their views on privacy with respect to VPNs.
+For example, we asked participants who they think has access to their data while using a VPN.
+We also asked participants what kinds of data they think are being shared.
+These questions gave us a broad understanding of the views participants had about VPNs before participating in the experiment.
+
 After the participants completed the pre-study survey, we scheduled times for each participant to conduct the experiment with a member of the research team.
 Each participant again consented to audio recording and confirmed that they have used a VPN before.
 We then explained to the participants that the purpose of the study was to understand how university students choose between VPN providers and what factors are most important to them, e.g. ease of use, privacy, and security.
 
+\subsubsection{Study Tasks}
 Once we began recording audio, we asked the participants to watch a short video on the website for Hotspot Shield about how VPNs work.
 We instructed them to watch this video so that each participant would have a general understanding of the claims that popular free VPN providers like Hotspot Shield make with respect to privacy.
 After the video ended, we asked the participants to look around the Hotspot Shield website as they normally would if they were interested in learning more about the VPN provider.
@@ -76,21 +49,72 @@ We then gave the participants a set of tasks to complete while Hotspot Shield wa
 These tasks required the participants to click on links we gave them to find information about particular things.
 In total, there were 3 tasks for each of 3 categories: entertainment, sexual health, and mental health.
 With each task, we instructed the participants to imagine that they were using their own computer to find information about something that belonged to these categories.
-For example, of the tasks for the "sexual health" category reads as follows: "Imagine that you are interested in learning about the symptoms of Chlamydia. Visit the following link to find 5 signs of Chlamydia, and write them down."
-
-Once the participants completed the first set of tasks, we asked them to rate how likely they would be to use Hotspot Shield on a scale of 1 to 5, with 5 being the highest rating.
-At this point in time, the participants were not informed that Hotspot Shield sends their browsing data to select trackers outsite of the VPN.
-We asked for the participants' ratings to gather their thoughts without being influenced by the privacy practices of Hotspot Shield.
-
+For example, one of the tasks for the "sexual health" category reads as follows: "Imagine that you are interested in learning about the symptoms of Chlamydia. Visit the following link to find 5 signs of Chlamydia, and write them down."
+We also asked the participants to think aloud for the duration of the study, noting anything that was of interest to them.
 \AH{Is there a better way to tell the reader which tasks we asked the participants to complete?}
 
-\subsection{Analysis}
+Once the participants completed the first set of tasks, we asked them to rate how likely they would be to use Hotspot Shield on a scale of 1 to 5, with 5 being the highest rating.
+At this point in time, the participants were not informed that Hotspot Shield sends their browsing data to select trackers outside of the VPN.
+Our goal was to gather their thoughts without being influenced by the privacy practices of Hotspot Shield.
+
+We then showed the participants VPNAudit before giving them another set of tasks.
+At this point in time, we did explain what information the extension was showing because we wanted to see if the participants understood the extension without our intervention.
+We simply pointed to the extension, showed them how to access it on their own for the remainder of the experiment, and informed them that it was collecting the displayed information while they were completing the first set of tasks.
+The second set of tasks we asked them to complete used the same categories as before: entertainment, sexual health, and mental health.
+
+Once the participants completed the second set of tasks, we asked them to rate how likely they would be to use Hotspot Shield on a scale of 1 to 5, with 5 being the highest rating.
+We still did not inform the participants that Hotspot Shield sends their browsing history to select trackers outside of the VPN.
+We also did not explain what information VPNAudit was showing them.
+Our goal was to see if VPNaudit would change the ratings the participants gave of Hotspot Shield without our intervention.
+
+After the participants gave their ratings for the second time, we explained the privacy practices of Hotspot Shield and explained what information VPNAudit was showing them.
+We then showed them an article from The Guardian that explains who Quantserve is and what information they collect through their tracker.
+We also showed them an article from Quantserve themselves that explains what information they collect through their tracker.
+
+Finally, we asked the participants one more time to rate how likely they would be to use Hotspot Shield.
+Our goal was to see if participants would change their ratings again based on all the information we had given them.
+We also asked the participants a set of follow-up questions to gain a deeper understanding of the reasons behind their ratings.
+Lastly, we showed the participants screenshots of Hotspot Shield's Chrome extension and VPNAudit, and we asked them to explain and mark up what they saw.
+We showed them these screenshots to gauge their understanding of Hotspot Shield and our tool for auditing it.
+
+
+\subsubsection{Recruitment} 
+We once again recruited participants through listservs maintained by our institution's survey center.
+We filtered for students who had used a VPN before, who had not participated in the interview or survey studies, and were currently undergraduate or graduate students at our institution. 
+All interviews were audio-taped, and participants were compensated with a \$20 Amazon gift card.
+
+In total, 64 people responded to our recruitment e-mails but some were ineligible as they had completed the interview or survey or were not students.
+We were able to conduct our experiment with 14 of the 65 eligible participants.
+However, we had to discard two interviews owing to audio related issues and since one of the participants had actually participated in the survey.
+This left us with valid data from 12 participants.
+
+
+ 
+\subsubsection{Analysis}
 We first transcribed the recordings from each session and developed a code book to apply to the transcripts.
 Our code book was based on general trends we discovered from an initial reading of the transcriptions.
 The codes created related to choosing VPN providers, perceptions of privacy with respect to VPNs, and reactions to VPNAudit.
 In total, we created 13 parent codes and 68 child codes. \mc{add example codes} The research team then discussed the coded transcripts and the final themes emerging from the lab sessions are discussed here.
 
-\subsection{Limitations}
+
+\subsubsection{Participants} 
+\mc{can we summarize some of this in a table?}
+According to the results of our pre-study survey, 9 of our 12 participants were between the ages of 18 and 24 (75\%) and 3 participants were between the ages of 25 and 34 (25\%).
+Of these participants, 7 were females (58.3\%), and 5 were males (41.7\%).
+Furthermore, 7 of the participants were from the United States (58.3\%), and 5 participants were of other nationalities (41.7\%). 
+Lastly, 4 of the participants were computer science students (33.3\%), 3 of the participants were political science students (25\%), and 5 of the participants were studying other majors (41.7\%).
+
+With respect to VPN usage, 8 participants indicated that they have used institutional VPNs (66.7\%), and 3 participants indicated that they have used VPNs that their employers offered (25\%).
+Furthermore, 6 participants indicated that they have used a paid, commercial VPN (41.7\%), and 5 participants indicated that they have used a free, commercial VPN (50\%).
+Interestingly, 1 participant indicated that they have used a VPN that they set up themselves (8.3\%).
+
+Lastly, with respect to privacy, 10 participants indicated that they have not looked through a VPN provider's privacy policy (83.3\%), with only 2 participants indicating otherwise (16.7\%).
+Every participant believed their VPN provider has access to their location (100\%).
+Furthermore, 8 of the participants believed their VPN provider collects data about which websites they visit (66.7\%).
+Interestingly, 7 of the participants believe VPNs guarantee access to the Internet (58.3\%), 6 of the participants believe VPNs mask their IP address (50\%), and 4 participants believe VPNs guarantee safety from tracking (33.3\%).
+However, only 1 participant believes VPNs guarantee anonymity (8.3\%), and only 1 participant believes VPNs guarantee "privacy" (8.3\%).
+
+\subsubsection{Limitations}
 There are several limitations of our participant demographics that must be considered.
 For example, our sample size was limited to 12 participants, which means that our findings cannot generalize to all university students.
 Our participants are also mostly Computer Science students that may be more technically sophisticated than students of other disciplines.
