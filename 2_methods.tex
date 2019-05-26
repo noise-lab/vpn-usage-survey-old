@@ -9,7 +9,22 @@ Nonetheless, we wanted to assess if students would value their privacy more if
 they were given more information about the privacy practices of VPN providers.
 \AH{Should I add a short blurb about what kind of experiment we designed?}
 
+For example, Hotspot Shield--a free VPN
+provider--sends data to select trackers through its Chrome
+extension~\cite{windscribe-hotspot-shield}. \mc{isn't it also the most popular
+vpn, add ref to indicate as much} According to the PAC \mc{describe what this
+is for} file in the extension, if an object on a webpage that points to the
+domains "analytics.google.com" (owned by Google), "pixel.quantserve.com"
+(owned by Quantcast), or "shelljacket.us", then any connections to these
+domains are created outside of the VPN.  \AH{Should we show the code for the
+PAC file here as a figure?} \mc{yes, show and highlight the relevant piece
+with an annotation or caption} This means Google, Quantcast, and Shelljacket can see which
+websites users of Hotspot Shield are visiting, even while the users are using
+the VPN. \mc{say why this is a data leakage per se}.
+
 \subsection{Method} 
+
+We designed an experiment with Hotspot Shield in which complete a series of tasks while using the VPN. As users complete the tasks, we ask them follow-up questions about their experience using the VPN, and we give them more information about the questionable privacy practices of the VPN. This enables us to answer two questions: 1) do participants care at all about the questionable privacy practices of Hotspot Shield, and 2) what information is most useful to them?
 
 \subsubsection{Surveys and Browser Extension Intervention}
 
@@ -68,19 +83,7 @@ informed that Hotspot Shield sends their browsing data to select trackers
 outside of the VPN.  Our goal was to gather their thoughts without being
 influenced by the privacy practices of Hotspot Shield.
 
-\paragraph{Browser Extension: VPN Audit} Hotspot Shield--a free VPN
-provider--sends data to select trackers through its Chrome
-extension~\cite{windscribe-hotspot-shield}. \mc{isn't it also the most popular
-vpn, add ref to indicate as much} According to the PAC \mc{describe what this
-is for} file in the extension, if an object on a webpage that points to the
-domains "analytics.google.com" (owned by Google), "pixel.quantserve.com"
-(owned by Quantcast), or "shelljacket.us", then any connections to these
-domains are created outside of the VPN.  \AH{Should we show the code for the
-PAC file here as a figure?} \mc{yes, show and highlight the relevant piece
-with an annotation or caption} This means Google and Quantcast can see which
-websites users of Hotspot Shield are visiting, even while the users are using
-the VPN. \mc{say why this is a data leakage per se}
-
+\paragraph{Browser Extension: VPN Audit}
 We developed VPN Audit as a Chrome extension to show users the privacy leaks
 in Hotspot Shield and design a laboratory study to see how university students
 would react.  Figure~\ref{fig:vpn-audit} shows a screenshot of our extension.
