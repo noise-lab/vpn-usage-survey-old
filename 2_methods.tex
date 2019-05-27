@@ -1,30 +1,29 @@
 % remember to put in tool design
 % interview Q's etc - mirror sections from study part 1
 
+\begin{figure}
+    \begin{lstlisting}
+    TODO: Add PAC file code
+    \end{lstlisting}
+\caption{Hotspot Shield leaks data about users to Google and Quantcast through its PAC file.}
+\label{fig:hotspot_pac}
+\end{figure}
+
 To understand how students think about privacy when choosing between VPN
 providers, we designed a small-scale lab study.  The results of the interviews
-and the survey described in sections~\ref{} suggested that privacy was not of
-significant concern to students when choosing a VPN provider to use.
+and the survey described in \ref{part1_findings} suggest that privacy is not of
+significant concern to students when choosing a VPN provider.
 Nonetheless, we wanted to assess if students would value their privacy more if
 they were given more information about the privacy practices of VPN providers.
-\AH{Should I add a short blurb about what kind of experiment we designed?}
 
 For example, Hotspot Shield--a free VPN
-provider--sends data to select trackers through its Chrome
-extension~\cite{windscribe-hotspot-shield}. \mc{isn't it also the most popular
-vpn, add ref to indicate as much} According to the PAC \mc{describe what this
-is for} file in the extension, if an object on a webpage that points to the
-domains "analytics.google.com" (owned by Google), "pixel.quantserve.com"
-(owned by Quantcast), or "shelljacket.us", then any connections to these
-domains are created outside of the VPN.  \AH{Should we show the code for the
-PAC file here as a figure?} \mc{yes, show and highlight the relevant piece
-with an annotation or caption} This means Google, Quantcast, and Shelljacket can see which
-websites users of Hotspot Shield are visiting, even while the users are using
-the VPN. \mc{say why this is a data leakage per se}.
+provider with over 650 million downloads--sends browsing data to select trackers through its Chrome extension~\cite{hotspot_shield, windscribe_hotspot}. Figure \ref{fig:hotspot_pac} shows the proxy auto-configuration (PAC) file for Hotspot Shield, which lists the servers that users connect to. If an object on a webpage points to the domains \texttt{analytics.google.com} (owned by Google), \texttt{pixel.quantserve.com} (owned by Quantcast), or \texttt{shelljacket.us} (ownership unknown), then any connections to these domains are created outside of the VPN. 
+
+This means that Google and Quantcast can see which websites users of the free version of Hotspot Shield are visiting, even while the VPN is turned on. Users are not informed that this data is being sent anywhere on the extension's user interface. Furthermore, the privacy policy for Hotspot Shield states that "Hotspot Shield does not share your browsing history or any other information you choose to provide, with advertisers", but it does not explain why trackers owned by Google and Quantcast can see which websites users of the VPN are visiting~\cite{hotspot_privacy}. Thus, Hotspot Shield leaks private data about its users, and unless users are highly technical, they have no way of knowing about this practice.
 
 \subsection{Method}\label{sec:experiment_method}
 
-We designed an experiment with Hotspot Shield in which complete a series of tasks while using the VPN. As users complete the tasks, we ask them follow-up questions about their experience using the VPN, and we give them more information about the questionable privacy practices of the VPN. This enables us to answer two questions: 1) do participants care at all about the questionable privacy practices of Hotspot Shield, and 2) what information is most useful to them?
+To better understand university students think about privacy, we designed an experiment in which complete a series of tasks while using Hotspot Shield. As users complete the tasks, we ask them follow-up questions about their experience using the VPN, and we give them more information about the privacy practices of the VPN. This enables us to answer two questions: 1) do participants care about the privacy practices of Hotspot Shield, and 2) how can information about the privacy practices of Hotspot Shield be best conveyed?
 
 \subsubsection{Surveys and Browser Extension Intervention}
 
@@ -90,7 +89,7 @@ would react.  Figure~\ref{fig:vpn-audit} shows a screenshot of our extension.
 The extension works by examining webpages in real time that users visit while
 using Hotspot Shield and looking for the Google Analytics, Quantserve, and
 Shelljacket trackers.  It then counts the number of unique webpage that these
-trackers were present on.  When a user clicks on the name of a tracker, they
+trackers were present on.  When a us er clicks on the name of a tracker, they
 see a list of each unique webpage under the "Browsing history sent to tracker"
 heading. \mc{need to explain why this is important}
 
