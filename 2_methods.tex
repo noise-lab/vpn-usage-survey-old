@@ -1,9 +1,41 @@
 % remember to put in tool design
 % interview Q's etc - mirror sections from study part 1
 
-\begin{figure}
-    \begin{lstlisting}
-    TODO: Add PAC file code
+\begin{figure}[t]
+    \begin{lstlisting}[basicstyle=\fontsize{6.5}{11}\selectfont, xleftmargin=2.5em,frame=single,framexleftmargin=2.5em, numbers=left]
+let active  = false,
+created = 1559093605955,
+started = Date.now();
+
+if((started-100) < created) {
+  active = true;
+}
+
+function FindProxyForURL(url, host) {
+  if(!url.match(/^(https?)|(ftp):\/\//)) 
+      return;
+  if(!active && (Date.now() > (started + 2000))) 
+      active = true;
+  if(!active) 
+      return 'DIRECT';
+
+  if(shExpMatch(host, 'pixel.quantserve.com') 
+  || shExpMatch(host, 'event.shelljacket.us') 
+  || shExpMatch(host, 'api.hsselite.com') 
+  || shExpMatch(host, 'order.hotspotshield.com') 
+  || shExpMatch(host, 'www.google-analytics.com') 
+  || shExpMatch(host, 'localhost') 
+  || shExpMatch(host, '127.0.0.1')) 
+      return 'DIRECT';
+
+  return 
+  'https ext-ms-ex-ca-mon-pr-p-3.northghost.com:443;
+   https ext-mi-ex-ca-tor-pr-p-2.northghost.com:443;
+   https ext-ms-ex-ca-mon-pr-p-1.northghost.com:443;
+   https ext-mi-ex-ca-mon-pr-p-5.northghost.com:443;
+   https ext-mi-ex-ca-mon-pr-p-4.northghost.com:443;';
+  return 'DIRECT';
+}
     \end{lstlisting}
 \caption{Hotspot Shield leaks data about users to Google and Quantcast through its PAC file.}
 \label{fig:hotspot_pac}
