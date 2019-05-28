@@ -2,7 +2,7 @@
 % interview Q's etc - mirror sections from study part 1
 
 \begin{figure}[t]
-    \begin{lstlisting}[basicstyle=\fontsize{6.5}{11}\selectfont, xleftmargin=2.5em,frame=single,framexleftmargin=2.5em, numbers=left]
+    \begin{lstlisting}[basicstyle=\fontsize{6.5}{11}\selectfont, xleftmargin=2.5em,frame=single,framexleftmargin=3em, numbers=left]
 let active  = false,
 created = 1559093605955,
 started = Date.now();
@@ -48,8 +48,7 @@ significant concern to students when choosing a VPN provider.
 Nonetheless, we wanted to assess if students would value their privacy more if
 they were given more information about the privacy practices of VPN providers.
 
-For example, Hotspot Shield--a free VPN
-provider with over 650 million downloads--sends browsing data to select trackers through its Chrome extension~\cite{hotspot_shield, windscribe_hotspot}. Figure \ref{fig:hotspot_pac} shows the proxy auto-configuration (PAC) file for Hotspot Shield, which lists the servers that users connect to. If an object on a webpage points to the domains \texttt{analytics.google.com} (owned by Google), \texttt{pixel.quantserve.com} (owned by Quantcast), or \texttt{shelljacket.us} (ownership unknown), then any connections to these domains are created outside of the VPN. 
+For example, Hotspot Shield--a free VPN provider with over 650 million downloads--sends browsing data to select trackers through its Chrome extension~\cite{hotspot_shield, windscribe_hotspot}. Figure \ref{fig:hotspot_pac} shows the proxy auto-configuration (PAC) file for Hotspot Shield, which lists the servers that users connect to. According to lines 17, 18, and 21, if an object on a webpage points to the domains \texttt{analytics.google.com} (owned by Google), \texttt{pixel.quantserve.com} (owned by Quantcast), or \texttt{shelljacket.us} (ownership unknown), then any connections to these domains are created outside of the VPN. 
 
 This means that Google and Quantcast can see which websites users of the free version of Hotspot Shield are visiting, even while the VPN is turned on. Users are not informed that this data is being sent anywhere on the extension's user interface. Furthermore, the privacy policy for Hotspot Shield states that "Hotspot Shield does not share your browsing history or any other information you choose to provide, with advertisers", but it does not explain why trackers owned by Google and Quantcast can see which websites users of the VPN are visiting~\cite{hotspot_privacy}. Thus, Hotspot Shield leaks private data about its users, and unless users are highly technical, they have no way of knowing about this practice.
 
@@ -150,16 +149,28 @@ and we asked them to explain and mark up what they saw.  We showed them these
 screenshots to gauge their understanding of Hotspot Shield and our tool for
 auditing it.
 
-
-
 \begin{figure}[t]
     \includegraphics[width=0.85\linewidth]{sections/figures/vpn-audit.png}
     \caption{A screenshot of \tool, our Chrome extension for showing browsing history sent to trackers outside of Hotspot Shield.}
     \label{fig:vpn-audit}
 \end{figure}
 
-
 \subsubsection{Recruitment and Participants} 
+
+\begin{table*}[h!]
+\centering
+\begin{tabular}{l r r |l r r|l r r|l r r} 
+ \hline
+ Age & \# & \% & Gender & \# & \% & Origin & \# & \% & Educational status & \# & \% \\
+\hline
+18 to 24 & 9 & 75\% & Female & 7 & 58.3\% & United States & 7 & 58.3\% & Postdoctoral Researchers & 0 & 0\% \\
+25 to 34 & 3 & 25\% & Male & 5 & 41.7\% & International & 5 & 41.7\% & Graduate students & 3 & 25\% \\
+35 to 44 & 0 & 0\% & Other & 0 & 0\% & & & & Undergraduate students & 9 & 75 \% \\
+ \hline
+\end{tabular}
+\caption{The distribution over age, gender, origin and education status for the 12 experiment participants. Our 5 International participants came from 5 different countries.}
+\label{tab:experiment_demo}
+\end{table*}
 
 We once again recruited participants through listservs maintained by our
 institution's survey center.  We filtered for students who had used a VPN
@@ -168,18 +179,12 @@ currently undergraduate or graduate students at our institution.  All
 interviews were audio-taped, and participants were compensated with a \$20
 Amazon gift card.
 
-In total, 64 people responded to our recruitment e-mails but some were
+Table \ref{tab:experiment_demo} summarizes the demographic information of our participants. In total, 64 people responded to our recruitment e-mails but some were
 ineligible as they had completed the interview or survey or were not students.
 We were able to conduct our experiment with 14 of the 65 eligible
 participants.  However, we had to discard two interviews owing to audio
 related issues and since one of the participants had actually participated in
 the survey.  This left us with valid data from 12 participants.
-
-\mc{can we summarize some of this in a table?}
-According to the results of our pre-study survey, 9 of our 12 participants were between the ages of 18 and 24 (75\%) and 3 participants were between the ages of 25 and 34 (25\%).
-Of these participants, 7 were females (58.3\%), and 5 were males (41.7\%).
-Furthermore, 7 of the participants were from the United States (58.3\%), and 5 participants were of other nationalities (41.7\%). 
-Lastly, 4 of the participants were computer science students (33.3\%), 3 of the participants were political science students (25\%), and 5 of the participants were studying other majors (41.7\%).
 
 With respect to VPN usage, 8 participants indicated that they have used institutional VPNs (66.7\%), and 3 participants indicated that they have used VPNs that their employers offered (25\%).
 Furthermore, 6 participants indicated that they have used a paid, commercial VPN (41.7\%), and 5 participants indicated that they have used a free, commercial VPN (50\%).
