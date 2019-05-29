@@ -2,7 +2,7 @@
 % interview Q's etc - mirror sections from study part 1
 
 \begin{figure}[t]
-    \begin{lstlisting}[basicstyle=\fontsize{6.5}{11}\selectfont, xleftmargin=2.5em,frame=single,framexleftmargin=3em, numbers=left]
+    \begin{lstlisting}[basicstyle=\fontsize{6.5}{11}\selectfont,escapeinside={(*}{*)}, xleftmargin=2.5em,frame=single,framexleftmargin=3em, numbers=left]
 let active  = false,
 created = 1559093605955,
 started = Date.now();
@@ -19,11 +19,11 @@ function FindProxyForURL(url, host) {
   if(!active) 
       return 'DIRECT';
 
-  if(shExpMatch(host, 'pixel.quantserve.com') 
-  || shExpMatch(host, 'event.shelljacket.us') 
+  if(shExpMatch(host, 'pixel.quantserve.com')
+  || shExpMatch(host, 'event.shelljacket.us')
   || shExpMatch(host, 'api.hsselite.com') 
   || shExpMatch(host, 'order.hotspotshield.com') 
-  || shExpMatch(host, 'www.google-analytics.com') 
+  || shExpMatch(host, 'www.google-analytics.com')
   || shExpMatch(host, 'localhost') 
   || shExpMatch(host, '127.0.0.1')) 
       return 'DIRECT';
@@ -48,13 +48,13 @@ significant concern to students when choosing a VPN provider.
 Nonetheless, we wanted to assess if students would value their privacy more if
 they were given more information about the privacy practices of VPN providers.
 
-For example, Hotspot Shield--a free VPN provider with over 650 million downloads--sends browsing data to select trackers through its Chrome extension~\cite{hotspot_shield, windscribe_hotspot}. Figure \ref{fig:hotspot_pac} shows the proxy auto-configuration (PAC) file for Hotspot Shield, which lists the servers that users connect to. According to lines 17, 18, and 21, if an object on a webpage points to the domains \texttt{analytics.google.com} (owned by Google), \texttt{pixel.quantserve.com} (owned by Quantcast), or \texttt{shelljacket.us} (ownership unknown), then any connections to these domains are created outside of the VPN. 
+For example, Hotspot Shield--a free VPN provider with over 650 million downloads--sends browsing data to select trackers through its Chrome extension~\cite{hotspot_shield, windscribe_hotspot}. Figure \ref{fig:hotspot_pac} shows the proxy auto-configuration (PAC) file for Hotspot Shield, which lists the servers that users connect to. According to lines 17, 18, and 21, if an object on a webpage points to the domains \texttt{analytics.google.com} (owned by Google), \texttt{pixel.quantserve.com} (owned by Quantcast), or \texttt{event.shelljacket.us} (ownership unknown), then any connections to these domains are created outside of the VPN. 
 
 This means that Google and Quantcast can see which websites users of the free version of Hotspot Shield are visiting, even while the VPN is turned on. Users are not informed that this data is being sent anywhere on the extension's user interface. Furthermore, the privacy policy for Hotspot Shield states that "Hotspot Shield does not share your browsing history or any other information you choose to provide, with advertisers", but it does not explain why trackers owned by Google and Quantcast can see which websites users of the VPN are visiting~\cite{hotspot_privacy}. Thus, Hotspot Shield leaks private data about its users, and unless users are highly technical, they have no way of knowing about this practice.
 
 \subsection{Method}\label{sec:experiment_method}
-
-To better understand university students think about privacy, we designed an experiment in which complete a series of tasks while using Hotspot Shield. As users complete the tasks, we ask them follow-up questions about their experience using the VPN, and we give them more information about the privacy practices of the VPN. This enables us to answer two questions: 1) do participants care about the privacy practices of Hotspot Shield, and 2) how can information about the privacy practices of Hotspot Shield be best conveyed?
+\mc{put in past tense}
+To see if university students would be more concerned about privacy if they are provided additional information about VPNs, we conducted a laboratory study in which students complete a series of tasks while using Hotspot Shield. As users complete the tasks, we asked them follow-up questions about their experience using the VPN, and we gave them more information about the privacy practices of the VPN. This enabled us to answer two questions: 1) do participants care about the privacy practices of Hotspot Shield, and 2) how can information about the privacy practices of Hotspot Shield be best conveyed?
 
 \subsubsection{Surveys and Browser Extension Intervention}
 
@@ -86,14 +86,14 @@ video on the website for Hotspot Shield about how VPNs work.  We instructed
 them to watch this video so that each participant would have a general
 understanding of the claims that popular free VPN providers like Hotspot
 Shield make with respect to privacy.  After the video ended, we asked the
-participants to look around the Hotspot Shield website as they normally would
+participants to browse the Hotspot Shield website as they normally would
 if they were interested in learning more about the VPN provider.  Once each
-participant finished looking around the website, we instructed them to turn on
+participant finished browsing the website, we instructed them to turn on
 the Hotspot Shield Chrome extension on their own and configure it to their
 liking.
 
 We then gave the participants a set of tasks to complete while Hotspot Shield
-was turned on with a research staff member's computer.  These tasks required
+was turned on on a research team member's computer.  These tasks required
 the participants to click on links we gave them to find information about
 particular things.  In total, there were 3 tasks for each of 3 categories:
 entertainment, sexual health, and mental health.  With each task, we
@@ -103,7 +103,7 @@ example, one of the tasks for the "sexual health" category reads as follows:
 "Imagine that you are interested in learning about the symptoms of Chlamydia.
 Visit the following link to find 5 signs of Chlamydia, and write them down."
 We also asked the participants to think aloud for the duration of the study,
-noting anything that was of interest to them.
+noting anything that was of interest to them. \mc{add think aloud ref}
 
 Once the participants completed the first set of tasks, we asked them to rate
 how likely they would be to use Hotspot Shield on a scale of 1 to 5, with 5
@@ -114,8 +114,7 @@ influenced by the privacy practices of Hotspot Shield.
 
 \paragraph{Browser Extension: \tool}
 We developed \tool as a Chrome extension to show participants privacy leaks
-in Hotspot Shield and designed a laboratory study to see how the participants
-would react.  Figure~\ref{fig:vpn-audit} shows a screenshot of our extension.
+in Hotspot Shield.  Figure~\ref{fig:vpn-audit} shows a screenshot of our extension.
 The extension works by examining webpages in real time that users visit while
 using Hotspot Shield and looking for the Google Analytics, Quantserve, and
 Shelljacket trackers.  It then counts the number of unique webpages that these
@@ -126,9 +125,9 @@ heading. It is important to list these webpages because it allows the participan
 
 \paragraph{Post-intervention Ratings Survey.}
 We then showed the participants \tool before giving them another set of tasks.
-At this point in time, we did explain what information the extension was showing because we wanted to see if the participants understood the extension without our intervention.
+At this point in time, we did not explain what information the extension was showing because we wanted to see if the participants understood the extension without our intervention.
 We simply pointed to the extension, showed them how to access it on their own for the remainder of the experiment, and informed them that it was collecting the displayed information while they were completing the first set of tasks.
-The second set of tasks we asked them to complete used the same categories as before: entertainment, sexual health, and mental health.
+The second set of tasks we asked them to complete used the same categories as before: entertainment, sexual health, and mental health. \mc{were the tasks different or the same?}
 
 Once the participants completed the second set of tasks, we asked them to rate how likely they would be to use Hotspot Shield on a scale of 1 to 5, with 5 being the highest rating.
 We still did not inform the participants that Hotspot Shield sends their browsing history to select trackers outside of the VPN.
@@ -150,7 +149,7 @@ screenshots to gauge their understanding of Hotspot Shield and our tool for
 auditing it.
 
 \begin{figure}[t]
-    \includegraphics[width=0.85\linewidth]{sections/figures/vpn-audit.png}
+    \includegraphics[width=\linewidth]{sections/figures/vpn-audit.png}
     \caption{A screenshot of \tool, our Chrome extension for showing browsing history sent to trackers outside of Hotspot Shield.}
     \label{fig:vpn-audit}
 \end{figure}
@@ -174,8 +173,8 @@ auditing it.
 
 We once again recruited participants through listservs maintained by our
 institution's survey center.  We filtered for students who had used a VPN
-before, who had not participated in the interview or survey studies, and were
-currently undergraduate or graduate students at our institution.  All
+before and were
+currently undergraduate or graduate students at our institution. We excluded those who had previously participated in the interview or survey studies.  All
 interviews were audio-taped, and participants were compensated with a \$20
 Amazon gift card.
 
@@ -186,9 +185,10 @@ participants.  However, we had to discard two interviews owing to audio
 related issues and since one of the participants had actually participated in
 the survey.  This left us with valid data from 12 participants.
 
-With respect to VPN usage, 8 participants indicated that they have used institutional VPNs (66.7\%), and 3 participants indicated that they have used VPNs that their employers offered (25\%).
-Furthermore, 6 participants indicated that they have used a paid, commercial VPN (41.7\%), and 5 participants indicated that they have used a free, commercial VPN (50\%).
-Interestingly, 1 participant indicated that they have used a VPN that they set up themselves (8.3\%).
+\mc{use past tense and make the notation here same as with previously studies (percentages seem misleading since the data set is so small)}
+With respect to VPN usage, 8 participants indicated that they had used institutional VPNs (66.7\%), and 3 participants indicated that they had used VPNs that their employers offered (25\%).
+Furthermore, 6 participants indicated that they had used a paid, commercial VPN (41.7\%), and 5 participants indicated that they had used a free, commercial VPN (50\%).
+Interestingly, 1 participant indicated that they had used a VPN that they set up themselves (8.3\%).
 
 Lastly, with respect to privacy, 10 participants indicated that they have not looked through a VPN provider's privacy policy (83.3\%), with only 2 participants indicating otherwise (16.7\%).
 Every participant believed their VPN provider has access to their location (100\%).
@@ -197,6 +197,7 @@ Interestingly, 7 of the participants believe VPNs guarantee access to the Intern
 However, only 1 participant believes VPNs guarantee anonymity (8.3\%), and only 1 participant believes VPNs guarantee "privacy" (8.3\%).
 
 \subsubsection{Data Processing and Analysis}
+\mc{add refs for coding process}
 We first transcribed the recordings from each session and developed a code book to apply to the transcripts.
 Our code book was based on general trends we discovered from an initial reading of the transcriptions.
 The codes created related to choosing VPN providers, perceptions of privacy with respect to VPNs, and reactions to \tool.
@@ -205,10 +206,10 @@ In total, we created 13 parent codes and 68 child codes. For example, we created
 \subsubsection{Limitations}
 There are several limitations of our participant demographics that must be considered.
 For example, our sample size was limited to 12 participants, which means that our findings cannot generalize to all university students.
-Our participants are also mostly Computer Science students that may be more technically sophisticated than students of other disciplines.
-Most of our participants are from the United States, which limits our ability to understand how international students think about privacy with respect to VPNs.
+Our participants were also mostly Computer Science students that may be more technically sophisticated than students of other disciplines.
+Most of our participants were from the United States, which limits our ability to understand how international students think about privacy with respect to VPNs.
 Lastly, all of our participants were students at a particular university.
 
 We are also limited by our experiment design in several ways.
 Our participants were only exposed to the privacy practices of Hotspot Shield, so we are unable to generalize how they would react to the privacy practices of other VPN providers.
-We are also unable to gauge how participants would react to the privacy practices of VPN providers on their own computers and within their own personal space; at best, we can ask them to imagine.
+We are also unable to gauge how participants would react to the privacy practices of VPN providers on their own computers and within their own personal space.
